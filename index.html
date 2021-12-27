@@ -5,32 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style/main-style.css">
+    <link rel="stylesheet" href="/style/modals.css">
+    <link rel="stylesheet" href="/style/config.css">
     <script src="/app/main-script.js" defer></script>
 </head>
 <body>
+    <!--  this div is used when we select the modal to hide the rest of the page -->
+    <div id="backdrop"></div> 
     <!--  head section -->
-    <section>
-        <h1></h1>
-        <p></p>
-    </section>
+    <header>
+        <h1>Play Tic, Tac, Toe</h1>
+        <p>Enjoy and have fun!</p>
+    </header>
 
     <!--  main game section -->
-    <section>
-        <!-- register player section with modal type input field-->
-        <div>
-            <form action="">
-                <div>Player1</div>
-                <div>Player2</div>
+    <main>
+        
+        <aside class="modal" id="config-modal">
+            <h2>Choose your name</h2>
+            <form>
+                <div class="form-control">
+                    <label for="playername">Player name</label>
+                    <input type="text" name="playername" id="playername">
+                </div>
+                <div>
+                    <button type="button" class="btn btn-alt">Cancel</button>
+                    <button type="submit" class="btn">Confirm</button>
+                </div>
             </form>
-        </div>
+        </aside>
+        <section id="game-config">
+            <ol>
+                <li>
+                    <article>
+                        <h2>Player 1</h2>
+                        <h3>PLAYER NAME</h3>
+                        <p class="player-symbol">X</p>
+                        <button class="btn btn-alt">Edit</button>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h2>Player 1</h2>
+                        <h3>PLAYER NAME</h3>
+                        <p class="player-symbol">O</p>
+                        <button class="btn btn-alt">Edit</button>
+                    </article>
+                </li>
+            </ol>
+            <button class="btn">Start New Game</button>
+        </section>
 
-        <!-- game result modal section -->
-        <div></div>
+        <section id="active-game">
 
-        <!-- game section -->
-        <div></div>
+            <article>
+                <h3>You won, <span   id="player-winner">PLAYER NAME</span>!</h3>
+                <p>Click "Start New Game" above, to start a new game!</p>
+            </article>
 
-    </section>
+            <p>It's your turn <span id="active-player-name">PLAYER NAME</span>!</p>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+
+                <li></li>
+                <li></li>
+                <li></li>
+
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </section>
+
+    </main>
 </body>
 </html>

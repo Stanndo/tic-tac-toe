@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: 'Exo 2', sans-serif;
+    color: rgb(44, 41, 44);
+    background-color: rgb(238, 235, 238);
+}
+
+header {
+    background-image: linear-gradient(to right, rgb(90, 29, 90), #7a2f7c, #9b43a1, #bc58c8, rgb(222, 110, 241));
+    color: white;
+    padding: 2rem 5%;
+    text-align: center; 
+}
+
+.btn {
+    font: inherit;
+    padding: 0.5rem 1.5rem;
+    background-color: rgb(90, 29, 90);
+    border: 1px solid rgb(90, 29, 90);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(56, 0, 56);
+    border-color: rgb(56, 0, 56);
+}
+
+.btn-alt {
+    background-color: transparent;
+    border-color: transparent;
+    color: rgb(90, 29, 90);
+}
+
+.btn-alt:hover {
+    background-color: #cd63dd;
+    border-color: #cd63dd;
+}
