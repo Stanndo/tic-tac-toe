@@ -41,7 +41,7 @@
     margin: 1rem;
     padding: 1rem;
     width: 50%;
-    background-color: #dfc8ff;
+    background-color: rgb(215, 187, 247);
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -57,4 +57,14 @@
     font-weight: bold;
     color: rgb(47, 4, 82);
     margin: 0.5rem 0 ;
+}
+
+.error label {
+    color: rgb(136, 2, 2);
+}
+
+.error input {
+    border-color: rgb(136, 2, 2);
+    color: rgb(136, 2, 2);
+    background-color: rgb(253, 219, 219);
 }

@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="/style/main-style.css">
     <link rel="stylesheet" href="/style/modals.css">
     <link rel="stylesheet" href="/style/config.css">
-    <script src="/app/main-script.js" defer></script>
+    <link rel="stylesheet" href="/style/game.css">
+    <script src="/app/config.js" defer></script>
+    <script src="/app/game.js" defer></script>
+    <script src="/app/main-app.js" defer></script>
 </head>
 <body>
     <!--  this div is used when we select the modal to hide the rest of the page -->
@@ -32,8 +35,9 @@
                     <label for="playername">Player name</label>
                     <input type="text" name="playername" id="playername">
                 </div>
+                <p id="config-errors"></p>
                 <div>
-                    <button type="button" class="btn btn-alt">Cancel</button>
+                    <button type="reset" class="btn btn-alt" id="cancel-config-btn">Cancel</button>
                     <button type="submit" class="btn">Confirm</button>
                 </div>
             </form>
@@ -41,19 +45,19 @@
         <section id="game-config">
             <ol>
                 <li>
-                    <article>
+                    <article id="player-1-data">
                         <h2>Player 1</h2>
                         <h3>PLAYER NAME</h3>
                         <p class="player-symbol">X</p>
-                        <button class="btn btn-alt">Edit</button>
+                        <button class="btn btn-alt" id="edit-player-1-btn" data-playerid="1">Edit</button>
                     </article>
                 </li>
                 <li>
-                    <article>
-                        <h2>Player 1</h2>
+                    <article id="player-2-data">
+                        <h2>Player 2</h2>
                         <h3>PLAYER NAME</h3>
                         <p class="player-symbol">O</p>
-                        <button class="btn btn-alt">Edit</button>
+                        <button class="btn btn-alt" id="edit-player-2-btn" data-playerid="2">Edit</button>
                     </article>
                 </li>
             </ol>
@@ -62,14 +66,14 @@
 
         <section id="active-game">
 
-            <article>
-                <h3>You won, <span   id="player-winner">PLAYER NAME</span>!</h3>
+            <article id="game-over">
+                <h2>You won, <span   id="player-winner">PLAYER NAME</span>!</h2>
                 <p>Click "Start New Game" above, to start a new game!</p>
             </article>
 
             <p>It's your turn <span id="active-player-name">PLAYER NAME</span>!</p>
-            <ol>
-                <li></li>
+            <ol id="game-board">
+                <li class="disabled">X</li>
                 <li></li>
                 <li></li>
 
