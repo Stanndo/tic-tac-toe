@@ -9,8 +9,7 @@ const formElement = document.querySelector("form");
 
 function getToInput(event) {
     console.log(event.target);
-    playerId = +event.target.dataset.playerid;
-    console.log(playerId);
+    playerId = event.target.dataset.playerid;
 
 }
 
@@ -18,13 +17,12 @@ function configPlayers(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
-    console.log(formData)
-    const enteredPlayerName = formData.get("pl-name").trim();
-    console.log(enteredPlayerName);
-
-    const playerData = document.getElementById("pl-" + playerId + "-name");
+    const playerData = formData.get("pl-name");
     console.log(playerData);
-    playerData.textContent = enteredPlayerName;
+
+    const playerNameEl = document.getElementById(`pl-${playerId}-name`);
+    playerNameEl.innerText = playerData;
+   
 }
 
 pl1BtnElement.addEventListener("click", getToInput);
