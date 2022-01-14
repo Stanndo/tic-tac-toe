@@ -14,26 +14,19 @@ function closeConfigPlayer() {
     formElement.children[0].children[1].value = "";
 }
 
-//this function will be executed when the form is submitted
+
 function savePlayerConfig(event) { 
-    // prevents the default browser behavier to send http request to server
-    // that way we can handle the form behavier with javascript
-    event.preventDefault();
-    // console.dir(event); 
+    
+    event.preventDefault(); 
 
-    const formData = new FormData(event.target); // this is built in blueprint 
-    // blueprint have his own methods we can access
-    // this blueprint takes the form and extract the values automatically for us
+    const formData = new FormData(event.target);
 
-    //we acces the input value by its name attribute
-    // this gives as the value from input with attribute playername
     const enteredPlayerName = formData.get("playername").trim(); 
-    //console.log(enteredPlayerName);
-
-    if (!enteredPlayerName) {  // or (enteredPlayerName === "")
+    
+    if (!enteredPlayerName) { 
         event.target.firstElementChild.classList.add("error"); 
         errorsOutputElement.textContent = "Please enter a valid name!";
-        return; // when used return like this we stop the execution of any code after this
+        return; 
     }
 
     const updatedPlayerDataElement = document.getElementById(`player-${editedPlayer}-data`);

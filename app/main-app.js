@@ -4,9 +4,12 @@ const gameData = [
     [0, 0, 0],
 ]
 
+let isGameOver = false;
 let editedPlayer = 0;
 let activePlayer = 0;
 let roundNumber = 1;
+let countWins1 = 0;
+let countWins2 = 0;
 const players = [
     {
         name: "",
@@ -29,6 +32,9 @@ const errorsOutputElement = document.getElementById("config-errors");
 const gameAreaElement = document.getElementById("active-game");
 const gameBoardElements = document.querySelectorAll("#game-board li");
 const activePlayerNameElement = document.getElementById("active-player-name");
+const gameOverElement = document.getElementById("game-over");
+const playerWinnerElement = document.getElementById("player-winner");
+ 
 
 editPlayer1BtnElement.addEventListener("click", openConfigPlayer);
 editPlayer2BtnElement.addEventListener("click", openConfigPlayer);
